@@ -8,12 +8,23 @@ int networkAlertStub(float celcius) {
     // Return 200 for ok
     // Return 500 for not-ok
     // stub always succeeds and returns 200
-    return 200;
+	if(celcius >100)
+		return 500;
+	else
+		return 200;
+}
+float FarenheitToCelcius(float farenheit)
+{
+	
+float celcius = (farenheit - 32) * 5 / 9;
+return celcius;
+
 }
 
-void alertInCelcius(float farenheit) {
-    float celcius = (farenheit - 32) * 5 / 9;
-    int returnCode = networkAlertStub(celcius);
+void alertInCelcius(float farenheit,float (*fpFarenheitToCelcius)(float),int (*fpnetworkAlertStub)(float)) {
+	
+    float celcius =  fpFarenheitToCelcius(farenheit);
+    int returnCode = fpnetworkAlertStub(celcius);
     if (returnCode != 200) {
         // non-ok response is not an error! Issues happen in life!
         // let us keep a count of failures to report
@@ -24,9 +35,17 @@ void alertInCelcius(float farenheit) {
 }
 
 int main() {
-    alertInCelcius(400.5);
-    alertInCelcius(303.6);
-    printf("%d alerts failed.\n", alertFailureCount);
-    printf("All is well (maybe!)\n");
-    return 0;
+    alertInCelcius(400.5,&FarenheitToCelcius,&networkAlertStub);
+	float returnValue = FarenheitToCelcius(400.5);
+	assert((int)returnValue == 204);
+    alertInCelcius(303.6,&FarenheitToCelcius,&networkAlertStub);
+	returnValue = FarenheitToCelcius(303.6);
+	assert((int)returnValue == 150);
+	alertInCelcius(500,&FarenheitToCelcius,&networkAlertStub);
+	returnValue = FarenheitToCelcius(500);
+	assert(returnValue == 260);
+	assert(alertFailureCount == 2);
+        printf("%d alerts failed.\n", alertFailureCount);
+        printf("All is well (maybe!)\n");
+        return 0;
 }
