@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <assert.h>
+#include <string.h>
 
 const char* majorColor[] = {"White", "Red", "Black", "Yellow", "Violet"};
 const char* minorColor[] = {"Blue", "Orange", "Green", "Brown", "Slate"};
@@ -28,8 +29,8 @@ int printColorMap() {
 		{
 			ColorPairArrayIndex++;
 			colorpair[ColorPairArrayIndex].Number = i * 5 + j;
-			strcpy(colorpair[ColorPairArrayIndex.MajorColor , majorColor[i]);
-			strcpy(colorpair[ColorPairArrayIndex.MinorColor , minorColor[i]);
+			strcpy(colorpair[ColorPairArrayIndex].MajorColor , majorColor[i]);
+			strcpy(colorpair[ColorPairArrayIndex].MinorColor , minorColor[i]);
 			PrintOnConsole(i,j);				
 				          
         }
