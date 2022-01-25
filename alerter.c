@@ -21,7 +21,7 @@ return celcius;
 
 }
 
-void alertInCelcius(float farenheit,float (*fpFarenheitToCelcius)(float),int (*fpnetworkAlertStub)(float) {
+void alertInCelcius(float farenheit,float (*fpFarenheitToCelcius)(float),int (*fpnetworkAlertStub)(float)) {
 	
     float celcius =  &fpFarenheitToCelcius(farenheit);
     int returnCode = &fpnetworkAlertStub(celcius);
@@ -38,11 +38,11 @@ int main() {
     alertInCelcius(400.5,&FarenheitToCelcius,&networkAlertStub);
 	float returnValue = FarenheitToCelcius(400.5);
 	assert(returnValue == 204.7);
-    alertInCelcius(303.6);
-	returnValue = FarenheitToCelcius(303.6,&FarenheitToCelcius,&networkAlertStub);
+    alertInCelcius(303.6,&FarenheitToCelcius,&networkAlertStub);
+	returnValue = FarenheitToCelcius(303.6);
 	assert(returnValue == 150.9);
-	alertInCelcius(500);
-	returnValue = FarenheitToCelcius(500,&FarenheitToCelcius,&networkAlertStub);
+	alertInCelcius(500,&FarenheitToCelcius,&networkAlertStub);
+	returnValue = FarenheitToCelcius(500);
 	assert(returnValue == 260);
 	assert(alertFailureCount == 2);
         printf("%d alerts failed.\n", alertFailureCount);
