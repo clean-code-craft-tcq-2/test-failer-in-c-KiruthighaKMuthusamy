@@ -41,7 +41,7 @@ int printColorMap() {
 int main() {
     int result = printColorMap();
     assert(result == 25);
-	assert(colorpair[23].PairNumber == 23);	
+	assert(colorpair[23].Number == 23);	
 	assert(strcmp(colorpair[23].MajorColor, "Violet") == 0);
 	assert(strcmp(colorpair[23].MinorColor, "Green") == 0);
     printf("All is well (maybe!)\n");
