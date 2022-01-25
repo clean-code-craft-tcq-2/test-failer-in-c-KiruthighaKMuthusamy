@@ -3,7 +3,7 @@
 
 const char* majorColor[] = {"White", "Red", "Black", "Yellow", "Violet"};
 const char* minorColor[] = {"Blue", "Orange", "Green", "Brown", "Slate"};
-Colorpair colorpair[25];
+
 
 struct Colorpair
 {
@@ -11,6 +11,8 @@ struct Colorpair
 	char MajorColor[8];
 	char MinorColor[8];
 };
+
+Colorpair colorpair[25];
 
 void PrintOnConsole( int i, int j)
 {
