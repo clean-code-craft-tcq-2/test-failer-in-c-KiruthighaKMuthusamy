@@ -23,8 +23,8 @@ return celcius;
 
 void alertInCelcius(float farenheit,float (*fpFarenheitToCelcius)(float),int (*fpnetworkAlertStub)(float)) {
 	
-    float celcius =  &fpFarenheitToCelcius(farenheit);
-    int returnCode = &fpnetworkAlertStub(celcius);
+    float celcius =  fpFarenheitToCelcius(farenheit);
+    int returnCode = fpnetworkAlertStub(celcius);
     if (returnCode != 200) {
         // non-ok response is not an error! Issues happen in life!
         // let us keep a count of failures to report
