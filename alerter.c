@@ -40,7 +40,7 @@ int main() {
 	assert((int)returnValue == 204);
     alertInCelcius(303.6,&FarenheitToCelcius,&networkAlertStub);
 	returnValue = FarenheitToCelcius(303.6);
-	assert((int)returnValue == 151);
+	assert((int)returnValue == 150);
 	alertInCelcius(500,&FarenheitToCelcius,&networkAlertStub);
 	returnValue = FarenheitToCelcius(500);
 	assert(returnValue == 260);
