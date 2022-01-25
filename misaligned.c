@@ -10,7 +10,7 @@ struct Colorpair
 	int Number;
 	char MajorColor[8];
 	char MinorColor[8];
-}
+};
 
 void PrintOnConsole( int i, int j)
 {
@@ -25,9 +25,9 @@ int printColorMap() {
         for(j = 0; j < 5; j++)
 		{
 			ColorPairArrayIndex++;
-			Colorpair[ColorPairArrayIndex].Number = i * 5 + j;
-			strcpy(Colorpair[ColorPairArrayIndex.MajorColor , majorColor[i]);
-			strcpy(Colorpair[ColorPairArrayIndex.MinorColor , minorColor[i]);
+			colorpair[ColorPairArrayIndex].Number = i * 5 + j;
+			strcpy(colorpair[ColorPairArrayIndex.MajorColor , majorColor[i]);
+			strcpy(colorpair[ColorPairArrayIndex.MinorColor , minorColor[i]);
 			PrintOnConsole(i,j);				
 				          
         }
