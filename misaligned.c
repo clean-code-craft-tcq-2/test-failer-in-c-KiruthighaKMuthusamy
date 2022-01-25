@@ -27,11 +27,12 @@ int printColorMap() {
 	{
         for(j = 0; j < 5; j++)
 		{
-			ColorPairArrayIndex++;
+			
 			colorpair[ColorPairArrayIndex].Number = i * 5 + j;
 			strcpy(colorpair[ColorPairArrayIndex].MajorColor , majorColor[i]);
 			strcpy(colorpair[ColorPairArrayIndex].MinorColor , minorColor[i]);
-			PrintOnConsole(i,j);				
+			PrintOnConsole(i,j);	
+		        ColorPairArrayIndex++;
 				          
         }
     }
