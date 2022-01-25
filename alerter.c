@@ -37,10 +37,10 @@ void alertInCelcius(float farenheit,float (*fpFarenheitToCelcius)(float),int (*f
 int main() {
     alertInCelcius(400.5,&FarenheitToCelcius,&networkAlertStub);
 	float returnValue = FarenheitToCelcius(400.5);
-	assert(returnValue == 204.7);
+	assert((int)returnValue == 204);
     alertInCelcius(303.6,&FarenheitToCelcius,&networkAlertStub);
 	returnValue = FarenheitToCelcius(303.6);
-	assert(returnValue == 150.9);
+	assert((int)returnValue == 151);
 	alertInCelcius(500,&FarenheitToCelcius,&networkAlertStub);
 	returnValue = FarenheitToCelcius(500);
 	assert(returnValue == 260);
