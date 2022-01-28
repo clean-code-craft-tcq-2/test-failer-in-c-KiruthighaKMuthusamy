@@ -45,7 +45,7 @@ int main() {
 	assert(colorpair[23].Number == 23);	
 	assert(strcmp(colorpair[23].MajorColor, "Violet") == 0);
 	assert(strcmp(colorpair[23].MinorColor, "Green") == 0);
-	assert(colorpair[15].Number == 15);	
+	assert(colorpair[23].Number == 15);	
 	assert(strcmp(colorpair[15].MajorColor, "Black") == 0);
 	assert(strcmp(colorpair[15].MinorColor, "Slate") == 0);
     printf("All is well (Yes,it is! :> )\n");
