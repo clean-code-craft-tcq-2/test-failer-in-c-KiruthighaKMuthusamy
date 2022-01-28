@@ -22,17 +22,17 @@ printf("%d | %s | %s\n", i * 5 + j, majorColor[i], minorColor[i]);
 
 int printColorMap() {
     
-    int i = 0, j = 0,ColorPairArrayIndex=0;
+    int i = 0, j = 0,ColorPairArrayIndex = 1;
     for(i = 0; i < 5; i++) 
 	{
         for(j = 0; j < 5; j++)
 		{
 			
-			colorpair[ColorPairArrayIndex].Number = i * 5 + j;
+			colorpair[ColorPairArrayIndex].Number = ColorPairArrayIndex;
 			strcpy(colorpair[ColorPairArrayIndex].MajorColor , majorColor[i]);
 			strcpy(colorpair[ColorPairArrayIndex].MinorColor , minorColor[i]);
 			printOnConsole(i,j);	
-		        ColorPairArrayIndex++;
+		    ColorPairArrayIndex++;
 				          
         }
     }
