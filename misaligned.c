@@ -31,7 +31,7 @@ int printColorMap() {
 			colorpair[ColorPairArrayIndex].Number = ColorPairArrayIndex;
 			strcpy(colorpair[ColorPairArrayIndex].MajorColor , majorColor[i]);
 			strcpy(colorpair[ColorPairArrayIndex].MinorColor , minorColor[j]);
-			printOnConsole(ColorPairArrayIndex,colorpair[ColorPairArrayIndex].MajorColor,colorpair[ColorPairArrayIndex].MinorColor , colorpair[ColorPairArrayIndex].MinorColor , minorColor[j]);	
+			printOnConsole(ColorPairArrayIndex,colorpair[ColorPairArrayIndex].MajorColor,colorpair[ColorPairArrayIndex].MinorColor , colorpair[ColorPairArrayIndex].MinorColor);	
 		        ColorPairArrayIndex++;
 				          
         }
