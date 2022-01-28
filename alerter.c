@@ -8,7 +8,7 @@ int networkAlertStub(float celcius) {
     // Return 200 for ok
     // Return 500 for not-ok
     // stub always succeeds and returns 200
-	if(celcius >100)
+	if(celcius >200)
 		return 500;
 	else
 		return 200;
@@ -38,14 +38,16 @@ int main() {
     alertInCelcius(400.5,&farenheitToCelcius,&networkAlertStub);
 	float returnValue = farenheitToCelcius(400.5);
 	assert((int)returnValue == 204);
+	assert(alertFailureCount == 1);
     alertInCelcius(303.6,&farenheitToCelcius,&networkAlertStub);
 	returnValue = farenheitToCelcius(303.6);
 	assert((int)returnValue == 150);
+	assert(alertFailureCount == 1);
 	alertInCelcius(500,&farenheitToCelcius,&networkAlertStub);
 	returnValue = farenheitToCelcius(500);
 	assert(returnValue == 260);
-	//assert(alertFailureCount == 2);
+	assert(alertFailureCount == 2);
         printf("%d alerts failed.\n", alertFailureCount);
-        printf("All is well (maybe!)\n");
+        printf("All is well (Yes it is! :> )\n");
         return 0;
 }
