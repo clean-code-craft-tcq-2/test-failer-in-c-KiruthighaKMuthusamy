@@ -13,7 +13,7 @@ int networkAlertStub(float celcius) {
 	else
 		return 200;
 }
-float FarenheitToCelcius(float farenheit)
+float farenheitToCelcius(float farenheit)
 {
 	
 float celcius = (farenheit - 32) * 5 / 9;
@@ -35,14 +35,14 @@ void alertInCelcius(float farenheit,float (*fpFarenheitToCelcius)(float),int (*f
 }
 
 int main() {
-    alertInCelcius(400.5,&FarenheitToCelcius,&networkAlertStub);
-	float returnValue = FarenheitToCelcius(400.5);
+    alertInCelcius(400.5,&farenheitToCelcius,&networkAlertStub);
+	float returnValue = farenheitToCelcius(400.5);
 	assert((int)returnValue == 204);
-    alertInCelcius(303.6,&FarenheitToCelcius,&networkAlertStub);
-	returnValue = FarenheitToCelcius(303.6);
+    alertInCelcius(303.6,&farenheitToCelcius,&networkAlertStub);
+	returnValue = farenheitToCelcius(303.6);
 	assert((int)returnValue == 150);
-	alertInCelcius(500,&FarenheitToCelcius,&networkAlertStub);
-	returnValue = FarenheitToCelcius(500);
+	alertInCelcius(500,&farenheitToCelcius,&networkAlertStub);
+	returnValue = farenheitToCelcius(500);
 	assert(returnValue == 260);
 	assert(alertFailureCount == 2);
         printf("%d alerts failed.\n", alertFailureCount);
