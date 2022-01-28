@@ -17,7 +17,7 @@ Colorpair colorpair[25];
 
 void printOnConsole(int ColorPairArrayIndex, char *majorColor, char *minorColor)
 {
-printf("%d | %s | %s\n", ColorPairArrayIndex, *majorColor, *minorColor);
+printf("%d | %s | %s\n", ColorPairArrayIndex, majorColor, minorColor);
 }
 
 int printColorMap() {
